@@ -12,26 +12,34 @@ namespace InventoryProgram
 {
     public partial class mainForm : Form
     {
+        //create a list of crafts to store all current inventory
+        //public List<craft> listInventory = new List<craft>();
+
         public mainForm()
         {
             InitializeComponent();
-            //create a craft object for testing
-            craft newCraft = new craft(0001);
+        }
 
-            //create a dataset
-            //dataSetInventory inventory = new dataSetInventory();
-            //create a new row
+        private void addNewItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddItemForm newAddItem = new AddItemForm(this);
+            newAddItem.Show();
 
-            dataSetInventory.currentInventoryRow newRow = dataSetInventory.currentInventory.NewcurrentInventoryRow();
-            //add information to the row
-            newRow.Item_Number = newCraft.number;
-            newRow.Group = newCraft.group;
-            newRow.Cost = newCraft.cost;
-            newRow.Price = newCraft.price;
-            newRow.Location = newCraft.location;
-            newRow.Date_Created = newCraft.dateCreated;
-            //add row to the table
-            dataSetInventory.currentInventory.Rows.Add(newRow);
+            //update datasource from the changed dataset
+            dataSetInventory.currentInventory.AcceptChanges();
+            dataGridAllInventory.Update();
+            dataSetInventory.AcceptChanges();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void removeItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveItemForm removeItem = new RemoveItemForm(this);
+            removeItem.Show();
         }
     }
 
@@ -43,7 +51,7 @@ namespace InventoryProgram
         public craft(int newItemNumber)
         {
             number = newItemNumber;
-            group = "Craft";
+            group = "General Craft";
             cost = 0.00;
             price = 0.00;
             location = "Apartment";
