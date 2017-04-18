@@ -41,12 +41,6 @@
             this.addItemsFromCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAllInventory = new System.Windows.Forms.Panel();
             this.dataGridAllInventory = new System.Windows.Forms.DataGridView();
-            this.itemNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentInventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetInventory = new InventoryProgram.dataSetInventory();
             this.menuStrip1.SuspendLayout();
@@ -79,13 +73,13 @@
             // openRegisterToolStripMenuItem
             // 
             this.openRegisterToolStripMenuItem.Name = "openRegisterToolStripMenuItem";
-            this.openRegisterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openRegisterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.openRegisterToolStripMenuItem.Text = "Open Register";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -120,12 +114,14 @@
             this.findItemToolStripMenuItem.Name = "findItemToolStripMenuItem";
             this.findItemToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.findItemToolStripMenuItem.Text = "Find Item";
+            this.findItemToolStripMenuItem.Click += new System.EventHandler(this.findItemToolStripMenuItem_Click);
             // 
             // viewAllItemsToolStripMenuItem
             // 
             this.viewAllItemsToolStripMenuItem.Name = "viewAllItemsToolStripMenuItem";
             this.viewAllItemsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.viewAllItemsToolStripMenuItem.Text = "View All Items";
+            this.viewAllItemsToolStripMenuItem.Click += new System.EventHandler(this.viewAllItemsToolStripMenuItem_Click);
             // 
             // addItemsFromCSVToolStripMenuItem
             // 
@@ -144,58 +140,18 @@
             // 
             // dataGridAllInventory
             // 
-            this.dataGridAllInventory.AutoGenerateColumns = false;
+            this.dataGridAllInventory.AllowUserToAddRows = false;
+            this.dataGridAllInventory.AllowUserToDeleteRows = false;
             this.dataGridAllInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridAllInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.itemNumberDataGridViewTextBoxColumn,
-            this.groupDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.locationDataGridViewTextBoxColumn,
-            this.dateCreatedDataGridViewTextBoxColumn});
-            this.dataGridAllInventory.DataSource = this.currentInventoryBindingSource;
             this.dataGridAllInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridAllInventory.Location = new System.Drawing.Point(0, 0);
             this.dataGridAllInventory.Name = "dataGridAllInventory";
+            this.dataGridAllInventory.ReadOnly = true;
             this.dataGridAllInventory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridAllInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridAllInventory.ShowEditingIcon = false;
             this.dataGridAllInventory.Size = new System.Drawing.Size(1063, 594);
             this.dataGridAllInventory.TabIndex = 0;
-            // 
-            // itemNumberDataGridViewTextBoxColumn
-            // 
-            this.itemNumberDataGridViewTextBoxColumn.DataPropertyName = "Item Number";
-            this.itemNumberDataGridViewTextBoxColumn.HeaderText = "Item Number";
-            this.itemNumberDataGridViewTextBoxColumn.Name = "itemNumberDataGridViewTextBoxColumn";
-            // 
-            // groupDataGridViewTextBoxColumn
-            // 
-            this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
-            this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
-            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "Date Created";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
             // 
             // currentInventoryBindingSource
             // 
@@ -243,12 +199,6 @@
         private System.Windows.Forms.Panel panelAllInventory;
         public dataSetInventory dataSetInventory;
         public System.Windows.Forms.DataGridView dataGridAllInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource currentInventoryBindingSource;
     }
 }
