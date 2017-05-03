@@ -73,6 +73,12 @@ namespace InventoryProgram
             FindItemForm findItem = new FindItemForm(this);
             findItem.Show();
         }
+
+        private void openRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterForm reg = new RegisterForm(this);
+            reg.Show();
+        }
     }
 
     public class craft
