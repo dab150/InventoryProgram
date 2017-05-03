@@ -90,11 +90,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBookmarkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBookmarkForm.Designer.cs">
+      <DependentUpon>AddBookmarkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCoffeeSleeveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCoffeeSleeveForm.Designer.cs">
+      <DependentUpon>AddCoffeeSleeveForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddItemForm.Designer.cs">
       <DependentUpon>AddItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOtherItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOtherItemForm.Designer.cs">
+      <DependentUpon>AddOtherItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dataSetInventory.cs">
       <DependentUpon>dataSetInventory.xsd</DependentUpon>
@@ -124,8 +142,17 @@
     <Compile Include="RemoveItemForm.Designer.cs">
       <DependentUpon>RemoveItemForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddBookmarkForm.resx">
+      <DependentUpon>AddBookmarkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCoffeeSleeveForm.resx">
+      <DependentUpon>AddCoffeeSleeveForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddItemForm.resx">
       <DependentUpon>AddItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOtherItemForm.resx">
+      <DependentUpon>AddOtherItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindItemForm.resx">
       <DependentUpon>FindItemForm.cs</DependentUpon>

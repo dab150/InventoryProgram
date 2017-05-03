@@ -7,13 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace InventoryProgram
 {
     public partial class AddItemForm : Form
     {
-        //variable to pass in mainForm so I can access items on mainForm
         private mainForm main;
 
         public AddItemForm(mainForm f)
@@ -24,24 +22,35 @@ namespace InventoryProgram
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //newAddItem.Show();
+
+            if (cmbItemType.Text.ToString() == "General Craft")
+                addOtherItem();
+            else if (cmbItemType.Text.ToString() == "Coffee Sleeve")
+                addCoffeeSleeve();
+            else if (cmbItemType.Text.ToString() == "Bookmark")
+                addBookmark();
+        }
 
 
-            string sql = @"insert into inventory (Type, InventoryNumber, Location, DateCreated, Cost, Price) values ("
-                + "'" + cmbItemType.Text.ToString() + "'" + ","
-                + Convert.ToInt16(txtID.Text.ToString()) + ","
-                + "'" + txtLocation.Text.ToString() + "'" + ","
-                + "'" + txtDate.Text.ToString() + "'" + ","
-                + Convert.ToDouble(txtCost.Text.ToString()) + ","
-                + Convert.ToDouble(txtPrice.Text.ToString()) + ")";
+        private void addOtherItem()
+        {
+            AddOtherItemForm newOtherItem = new AddOtherItemForm(this.main);
+            newOtherItem.Show();
+            this.Close();
+        }
 
-            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
-            command.ExecuteNonQuery();
+        private void addCoffeeSleeve()
+        {
+            AddCoffeeSleeveForm newCoffeeSleeve = new AddCoffeeSleeveForm(this.main);
+            newCoffeeSleeve.Show();
+            this.Close();
+        }
 
-            MessageBox.Show("Item " + txtID.Text.ToString() + " added to inventory!");
-
-            //update datasource for the changed dataset
-            main.updateInventoryGrid();
-
+        private void addBookmark()
+        {
+            AddBookmarkForm newBookmark = new AddBookmarkForm(this.main);
+            newBookmark.Show();
             this.Close();
         }
 
