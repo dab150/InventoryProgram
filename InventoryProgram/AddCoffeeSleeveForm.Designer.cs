@@ -143,9 +143,9 @@
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(38, 38);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(66, 20);
+            this.lblID.Size = new System.Drawing.Size(138, 20);
             this.lblID.TabIndex = 14;
-            this.lblID.Text = "Item ID:";
+            this.lblID.Text = "Inventory Number:";
             // 
             // txtCondition
             // 

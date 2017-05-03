@@ -79,6 +79,16 @@ namespace InventoryProgram
             RegisterForm reg = new RegisterForm(this);
             reg.Show();
         }
+
+        private void addItemsFromCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            string sql = "select * from soldItems;";
+
+            var da = new SQLiteDataAdapter(sql, m_dbConnection);
+            da.Fill(ds);
+            dataGridAllInventory.DataSource = ds.Tables[0].DefaultView;
+        }
     }
 
     public class craft

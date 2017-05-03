@@ -128,5 +128,32 @@ namespace InventoryProgram
             cartDataSet.Clear();
             updateTotals();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            //copy the items from inventory to soldItems table
+            foreach (DataRow row in cartDataSet.Tables[0].Rows)
+            {
+                string sql = @"INSERT INTO soldItems SELECT * FROM inventory WHERE InventoryNumber = " + row["InventoryNumber"].ToString();
+
+                DataSet ds = new DataSet();
+                var da = new SQLiteDataAdapter(sql, main.m_dbConnection);
+                da.Fill(ds);
+            }
+
+            //delete them from the inventory database
+            foreach (DataRow row in cartDataSet.Tables[0].Rows)
+            {
+                string sql = @"DELETE FROM inventory WHERE InventoryNumber = " + row["InventoryNumber"].ToString();
+
+                DataSet ds = new DataSet();
+                var da = new SQLiteDataAdapter(sql, main.m_dbConnection);
+                da.Fill(ds);
+            }
+
+            main.dataGridAllInventory.Refresh();
+            cartDataSet.Clear();
+            updateTotals();
+        }
     }
 }

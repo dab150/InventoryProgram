@@ -228,6 +228,7 @@
             this.btnOrder.TabIndex = 19;
             this.btnOrder.Text = "Complete Order";
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnClearOrder
             // 
