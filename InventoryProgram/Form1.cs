@@ -94,30 +94,60 @@ namespace InventoryProgram
     public class craft
     {
         /*Constructor*/
+
         public craft() { }
 
-        public craft(int newItemNumber)
-        {
-            number = newItemNumber;
-            group = "General Craft";
-            cost = 0.00;
-            price = 0.00;
-            location = "Apartment";
-            dateCreated = DateTime.Now;
-        }
-
         /*class members */
-        public int number { get; set; } //unique number to identify each item
-        public String group { get; set; }  //identifies what type of 
-        public double cost { get; set; } //cost of the item
-        public double price { get; set; } //price of the item
-        public String location { get; set; } //physical location of the item (ex. Antique Store)
-        public DateTime dateCreated { get; set; } //date the item was added to inventory
+        public int number; //unique number to identify each item
+        public string type;  //identifies what type of 
+        public double cost; //cost of the item
+        public double price; //price of the item
+        public string location; //physical location of the item (ex. Antique Store)
+        public string condition; //describes the condition of the item
+        public string dateCreated; //date the item was added to inventory
 
         /*class methods*/
-        public void addToInventory()
+        public virtual void addToInventory(mainForm main)
         {
+            string sql = @"insert into inventory (Type, InventoryNumber, Condition, Location, DateCreated, Cost, Price) values ("
+              + "'General Craft'" + ","
+              + Convert.ToInt16(this.number.ToString()) + ","
+              + "'" + this.condition.ToString() + "'" + ","
+              + "'" + this.location.ToString() + "'" + ","
+              + "'" + this.dateCreated.ToString() + "'" + ","
+              + Convert.ToDouble(this.cost.ToString()) + ","
+              + Convert.ToDouble(this.price.ToString()) + ")";
 
+            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
+            command.ExecuteNonQuery();
+            main.updateInventoryGrid();
+        }
+
+        public void removeFromInventory(int inventoryNum, mainForm main)
+        {
+            string sql = @"DELETE FROM inventory WHERE InventoryNumber = " + inventoryNum.ToString();
+
+            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
+            command.ExecuteNonQuery();
+
+            MessageBox.Show("Item " + inventoryNum.ToString() + " removed from inventory!");
+
+            //update datasource for the changed dataset
+            main.updateInventoryGrid();
+        }
+
+        public void findInInventory(int inventoryNum, mainForm main)
+        {
+            string sql = @"Select * FROM inventory WHERE InventoryNumber = " + inventoryNum.ToString();
+
+            DataSet ds = new DataSet();
+
+            var da = new SQLiteDataAdapter(sql, main.m_dbConnection);
+            da.Fill(ds);
+            main.dataGridAllInventory.DataSource = ds.Tables[0].DefaultView;
+
+            if (ds.Tables[0].Rows.Count == 0)
+                MessageBox.Show("Item " + inventoryNum.ToString() + " not found!");
         }
     }
 
@@ -127,11 +157,32 @@ namespace InventoryProgram
         public coffeeSleeve() { }
 
         /*class members*/
-        String Group = "Coffee Sleeve";
-        String frontPattern; //describes the front fabric pattern
-        String backPattern; //describes the back fabric pattern
-        String buttonColor; //describes the button color
-        String strapColor; //describes the elastic strap color
+        public string type = "Coffee Sleeve";
+        public string frontFabric; //describes the front fabric pattern
+        public string backFabric; //describes the back fabric pattern
+        public string buttonColor; //describes the button color
+        public string hairTieColor; //describes the elastic strap color
+
+        public override void addToInventory(mainForm main)
+        {
+            string sql = @"insert into inventory (Type, InventoryNumber, FabricFront, FabricBack, 
+                            Button, HairTie, Condition, Location, DateCreated, Cost, Price) values ("
+               + "'Coffee Sleeve'" + ","
+               + Convert.ToInt16(this.number.ToString()) + ","
+               + "'" + this.frontFabric.ToString() + "'" + ","
+               + "'" + this.backFabric.ToString() + "'" + ","
+               + "'" + this.buttonColor.ToString() + "'" + ","
+               + "'" + this.hairTieColor.ToString() + "'" + ","
+               + "'" + this.condition.ToString() + "'" + ","
+               + "'" + this.location.ToString() + "'" + ","
+               + "'" + this.dateCreated.ToString() + "'" + ","
+               + Convert.ToDouble(this.cost.ToString()) + ","
+               + Convert.ToDouble(this.price.ToString()) + ")";
+
+            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
+            command.ExecuteNonQuery();
+            main.updateInventoryGrid();
+        }
     }
 
     public class bookmark : craft
@@ -140,9 +191,29 @@ namespace InventoryProgram
         public bookmark() { }
 
         /*class members*/
-        String Group = "Bookmark";
-        String frontPattern; //describes the front fabric pattern
-        String backPattern; //describes the back fabric pattern
-        String ribbonColor; //describes the color of the ribbon
+        public string type = "Bookmark";
+        public string frontFabric; //describes the front fabric pattern
+        public string backFabric; //describes the back fabric pattern
+        public string charm; //describes the color of the ribbon
+
+        public override void addToInventory(mainForm main)
+        {
+            string sql = @"insert into inventory (Type, InventoryNumber, FabricFront, FabricBack, Charm, Condition, Location, DateCreated, Cost, Price) values ("
+               + "'Bookmark'" + ","
+               + Convert.ToInt16(this.number.ToString()) + ","
+               + "'" + this.frontFabric.ToString() + "'" + ","
+               + "'" + this.backFabric.ToString() + "'" + ","
+               + "'" + this.charm.ToString() + "'" + ","
+               + "'" + this.condition.ToString() + "'" + ","
+               + "'" + this.location.ToString() + "'" + ","
+               + "'" + this.dateCreated.ToString() + "'" + ","
+               + Convert.ToDouble(this.cost.ToString()) + ","
+               + Convert.ToDouble(this.price.ToString()) + ")";
+
+            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
+            command.ExecuteNonQuery();
+            main.updateInventoryGrid();
+        }
+
     }
 }

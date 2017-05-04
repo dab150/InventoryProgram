@@ -46,15 +46,17 @@
             this.lblCost = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.txtCondition = new System.Windows.Forms.TextBox();
+            this.lblCondition = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(301, 427);
+            this.btnAdd.Location = new System.Drawing.Point(301, 454);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 37);
-            this.btnAdd.TabIndex = 57;
+            this.btnAdd.TabIndex = 55;
             this.btnAdd.Text = "Add Item";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -62,10 +64,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(12, 427);
+            this.btnCancel.Location = new System.Drawing.Point(12, 454);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 37);
-            this.btnCancel.TabIndex = 56;
+            this.btnCancel.TabIndex = 54;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -221,11 +223,32 @@
             this.lblID.TabIndex = 36;
             this.lblID.Text = "Inventory Number:";
             // 
+            // txtCondition
+            // 
+            this.txtCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCondition.Location = new System.Drawing.Point(181, 399);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(188, 26);
+            this.txtCondition.TabIndex = 53;
+            this.txtCondition.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblCondition
+            // 
+            this.lblCondition.AutoSize = true;
+            this.lblCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondition.Location = new System.Drawing.Point(38, 402);
+            this.lblCondition.Name = "lblCondition";
+            this.lblCondition.Size = new System.Drawing.Size(80, 20);
+            this.lblCondition.TabIndex = 52;
+            this.lblCondition.Text = "Condition:";
+            // 
             // AddBookmarkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 477);
+            this.ClientSize = new System.Drawing.Size(407, 503);
+            this.Controls.Add(this.txtCondition);
+            this.Controls.Add(this.lblCondition);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCharm);
@@ -271,5 +294,7 @@
         private System.Windows.Forms.Label lblCost;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtCondition;
+        private System.Windows.Forms.Label lblCondition;
     }
 }

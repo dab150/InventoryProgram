@@ -21,34 +21,21 @@ namespace InventoryProgram
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            bookmark newBookmark = new bookmark();
 
-            /* The below SQL insert needs modified to insert a bookmark
-            /  This may involve creating seperate tables for bookmarks, coffee sleeves, etc.
-            /  Needs to be thought out more
-            */
+            newBookmark.number = Convert.ToInt16(txtID.Text.ToString());
+            newBookmark.frontFabric = txtFrontFabric.Text.ToString();
+            newBookmark.backFabric = txtBackFabric.Text.ToString();
+            newBookmark.charm = txtCharm.Text.ToString();
+            newBookmark.condition = txtCondition.Text.ToString();
+            newBookmark.location = txtLocation.Text.ToString();
+            newBookmark.dateCreated = txtDate.Text.ToString();
+            newBookmark.cost = Convert.ToDouble(txtCost.Text.ToString());
+            newBookmark.price = Convert.ToDouble(txtPrice.Text.ToString());
 
-            //string sql = @"insert into inventory (Type, InventoryNumber, FabricFront, FabricBack, Button, HairTie, Condition, Location, DateCreated, Cost, Price) values ("
-            //    + "'Bookmark'" + ","
-            //    + Convert.ToInt16(txtID.Text.ToString()) + ","
-            //    + "'" + txtFrontFabric.Text.ToString() + "'" + ","
-            //    + "'" + txtBackFabric.Text.ToString() + "'" + ","
-            //    + "'" + txtButton.Text.ToString() + "'" + ","
-            //    + "'" + txtHairTie.Text.ToString() + "'" + ","
-            //    + "'" + txtCondition.Text.ToString() + "'" + ","
-            //    + "'" + txtLocation.Text.ToString() + "'" + ","
-            //    + "'" + txtDate.Text.ToString() + "'" + ","
-            //    + Convert.ToDouble(txtCost.Text.ToString()) + ","
-            //    + Convert.ToDouble(txtPrice.Text.ToString()) + ")";
+            newBookmark.addToInventory(main);
 
-            //SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
-            //command.ExecuteNonQuery();
-
-            //MessageBox.Show("Coffee Sleeve, item " + txtID.Text.ToString() + " added to inventory!");
-
-            ////update datasource for the changed dataset
-            //main.updateInventoryGrid();
-
-            //this.Close();
+            this.Close();
         }
     }
 

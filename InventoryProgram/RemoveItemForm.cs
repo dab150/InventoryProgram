@@ -27,15 +27,11 @@ namespace InventoryProgram
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            string sql = @"DELETE FROM inventory WHERE InventoryNumber = " + txtID.Text.ToString();
+            craft c = new craft();
 
-            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
-            command.ExecuteNonQuery();
+            c.number = Convert.ToInt16(txtID.Text.ToString());
 
-            MessageBox.Show("Item " + txtID.Text.ToString() + " removed from inventory!");
-
-            //update datasource for the changed dataset
-            main.updateInventoryGrid();
+            c.removeFromInventory(c.number, main);
 
             this.Close();
         }

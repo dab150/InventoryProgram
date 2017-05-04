@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbItemType = new System.Windows.Forms.ComboBox();
-            this.lblType = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtCost = new System.Windows.Forms.TextBox();
@@ -42,36 +40,15 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtCondition = new System.Windows.Forms.TextBox();
+            this.lblCondition = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // cmbItemType
-            // 
-            this.cmbItemType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbItemType.FormattingEnabled = true;
-            this.cmbItemType.Items.AddRange(new object[] {
-            "General Craft",
-            "Coffee Sleeve",
-            "Bookmark"});
-            this.cmbItemType.Location = new System.Drawing.Point(170, 24);
-            this.cmbItemType.Name = "cmbItemType";
-            this.cmbItemType.Size = new System.Drawing.Size(188, 28);
-            this.cmbItemType.TabIndex = 0;
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(27, 27);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(83, 20);
-            this.lblType.TabIndex = 1;
-            this.lblType.Text = "Item Type:";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(27, 71);
+            this.lblID.Location = new System.Drawing.Point(40, 31);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(66, 20);
             this.lblID.TabIndex = 2;
@@ -80,7 +57,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(170, 68);
+            this.txtID.Location = new System.Drawing.Point(183, 28);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(188, 26);
             this.txtID.TabIndex = 3;
@@ -89,7 +66,7 @@
             // txtCost
             // 
             this.txtCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(170, 112);
+            this.txtCost.Location = new System.Drawing.Point(183, 72);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(188, 26);
             this.txtCost.TabIndex = 5;
@@ -99,7 +76,7 @@
             // 
             this.lblCost.AutoSize = true;
             this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCost.Location = new System.Drawing.Point(27, 115);
+            this.lblCost.Location = new System.Drawing.Point(40, 75);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(82, 20);
             this.lblCost.TabIndex = 4;
@@ -108,7 +85,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(170, 158);
+            this.txtPrice.Location = new System.Drawing.Point(183, 118);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(188, 26);
             this.txtPrice.TabIndex = 7;
@@ -118,7 +95,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(27, 161);
+            this.lblPrice.Location = new System.Drawing.Point(40, 121);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(84, 20);
             this.lblPrice.TabIndex = 6;
@@ -127,7 +104,7 @@
             // txtLocation
             // 
             this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(170, 204);
+            this.txtLocation.Location = new System.Drawing.Point(183, 164);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(188, 26);
             this.txtLocation.TabIndex = 9;
@@ -137,7 +114,7 @@
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation.Location = new System.Drawing.Point(27, 207);
+            this.lblLocation.Location = new System.Drawing.Point(40, 167);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(110, 20);
             this.lblLocation.TabIndex = 8;
@@ -146,7 +123,7 @@
             // txtDate
             // 
             this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate.Location = new System.Drawing.Point(170, 249);
+            this.txtDate.Location = new System.Drawing.Point(183, 209);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(188, 26);
             this.txtDate.TabIndex = 11;
@@ -156,7 +133,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(27, 252);
+            this.lblDate.Location = new System.Drawing.Point(40, 212);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(109, 20);
             this.lblDate.TabIndex = 10;
@@ -165,10 +142,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(12, 299);
+            this.btnCancel.Location = new System.Drawing.Point(12, 321);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 37);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -176,19 +153,40 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(301, 299);
+            this.btnAdd.Location = new System.Drawing.Point(301, 321);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 37);
-            this.btnAdd.TabIndex = 13;
+            this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add Item";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtCondition
+            // 
+            this.txtCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCondition.Location = new System.Drawing.Point(183, 253);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(188, 26);
+            this.txtCondition.TabIndex = 13;
+            this.txtCondition.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblCondition
+            // 
+            this.lblCondition.AutoSize = true;
+            this.lblCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondition.Location = new System.Drawing.Point(40, 256);
+            this.lblCondition.Name = "lblCondition";
+            this.lblCondition.Size = new System.Drawing.Size(80, 20);
+            this.lblCondition.TabIndex = 12;
+            this.lblCondition.Text = "Condition:";
             // 
             // AddOtherItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 348);
+            this.ClientSize = new System.Drawing.Size(407, 370);
+            this.Controls.Add(this.txtCondition);
+            this.Controls.Add(this.lblCondition);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtDate);
@@ -201,8 +199,6 @@
             this.Controls.Add(this.lblCost);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblID);
-            this.Controls.Add(this.lblType);
-            this.Controls.Add(this.cmbItemType);
             this.Name = "AddOtherItemForm";
             this.Text = "Add New Item";
             this.ResumeLayout(false);
@@ -211,9 +207,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbItemType;
-        private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtCost;
@@ -226,5 +219,7 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtCondition;
+        private System.Windows.Forms.Label lblCondition;
     }
 }

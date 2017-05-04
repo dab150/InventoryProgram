@@ -23,26 +23,20 @@ namespace InventoryProgram
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string sql = @"insert into inventory (Type, InventoryNumber, FabricFront, FabricBack, Button, HairTie, Condition, Location, DateCreated, Cost, Price) values ("
-                + "'Coffee Sleeve'" + ","
-                + Convert.ToInt16(txtID.Text.ToString()) + ","
-                + "'" + txtFrontFabric.Text.ToString() + "'" + ","
-                + "'" + txtBackFabric.Text.ToString() + "'" + ","
-                + "'" + txtButton.Text.ToString() + "'" + ","
-                + "'" + txtHairTie.Text.ToString() + "'" + ","
-                + "'" + txtCondition.Text.ToString() + "'" + ","
-                + "'" + txtLocation.Text.ToString() + "'" + ","
-                + "'" + txtDate.Text.ToString() + "'" + ","
-                + Convert.ToDouble(txtCost.Text.ToString()) + ","
-                + Convert.ToDouble(txtPrice.Text.ToString()) + ")";
+            coffeeSleeve newSleeve = new coffeeSleeve();
 
-            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
-            command.ExecuteNonQuery();
+            newSleeve.number = Convert.ToInt16(txtID.Text.ToString());
+            newSleeve.frontFabric = txtFrontFabric.Text.ToString();
+            newSleeve.backFabric = txtBackFabric.Text.ToString();
+            newSleeve.buttonColor = txtButton.Text.ToString();
+            newSleeve.hairTieColor = txtHairTie.Text.ToString();
+            newSleeve.condition = txtCondition.Text.ToString();
+            newSleeve.location = txtLocation.Text.ToString();
+            newSleeve.dateCreated = txtDate.Text.ToString();
+            newSleeve.cost = Convert.ToDouble(txtCost.Text.ToString());
+            newSleeve.price = Convert.ToDouble(txtPrice.Text.ToString());
 
-            MessageBox.Show("Coffee Sleeve, item " + txtID.Text.ToString() + " added to inventory!");
-
-            //update datasource for the changed dataset
-            main.updateInventoryGrid();
+            newSleeve.addToInventory(main);
 
             this.Close();
         }

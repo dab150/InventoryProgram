@@ -27,17 +27,12 @@ namespace InventoryProgram
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            string sql = @"Select * FROM inventory WHERE InventoryNumber = " + txtID.Text.ToString();
+            craft c = new craft();
 
-            DataSet ds = new DataSet();
+            c.number = Convert.ToInt16(txtID.Text.ToString());
 
-            var da = new SQLiteDataAdapter(sql, main.m_dbConnection);
-            da.Fill(ds);
-            main.dataGridAllInventory.DataSource = ds.Tables[0].DefaultView;
-
-            if (ds.Tables[0].Rows.Count == 0)
-                MessageBox.Show("Item " + txtID.Text.ToString() + " not found!");
-
+            c.findInInventory(c.number, main);
+          
             this.Close();
         }
     }

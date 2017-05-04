@@ -151,7 +151,7 @@ namespace InventoryProgram
                 da.Fill(ds);
             }
 
-            main.dataGridAllInventory.Refresh();
+            main.updateInventoryGrid();
             cartDataSet.Clear();
             updateTotals();
         }

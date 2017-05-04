@@ -24,23 +24,16 @@ namespace InventoryProgram
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            craft c = new craft();
 
+            c.number = Convert.ToInt16(txtID.Text.ToString());
+            c.cost = Convert.ToDouble(txtCost.Text.ToString());
+            c.price = Convert.ToDouble(txtPrice.Text.ToString());
+            c.location = txtLocation.Text.ToString();
+            c.dateCreated = txtDate.Text.ToString();
+            c.condition = txtCondition.Text.ToString();
 
-            string sql = @"insert into inventory (Type, InventoryNumber, Location, DateCreated, Cost, Price) values ("
-                + "'" + cmbItemType.Text.ToString() + "'" + ","
-                + Convert.ToInt16(txtID.Text.ToString()) + ","
-                + "'" + txtLocation.Text.ToString() + "'" + ","
-                + "'" + txtDate.Text.ToString() + "'" + ","
-                + Convert.ToDouble(txtCost.Text.ToString()) + ","
-                + Convert.ToDouble(txtPrice.Text.ToString()) + ")";
-
-            SQLiteCommand command = new SQLiteCommand(sql, main.m_dbConnection);
-            command.ExecuteNonQuery();
-
-            MessageBox.Show("Item " + txtID.Text.ToString() + " added to inventory!");
-
-            //update datasource for the changed dataset
-            main.updateInventoryGrid();
+            c.addToInventory(main);
 
             this.Close();
         }

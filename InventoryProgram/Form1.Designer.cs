@@ -73,14 +73,14 @@
             // openRegisterToolStripMenuItem
             // 
             this.openRegisterToolStripMenuItem.Name = "openRegisterToolStripMenuItem";
-            this.openRegisterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.openRegisterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openRegisterToolStripMenuItem.Text = "Open Register";
             this.openRegisterToolStripMenuItem.Click += new System.EventHandler(this.openRegisterToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -99,35 +99,35 @@
             // addNewItemToolStripMenuItem
             // 
             this.addNewItemToolStripMenuItem.Name = "addNewItemToolStripMenuItem";
-            this.addNewItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addNewItemToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.addNewItemToolStripMenuItem.Text = "Add New Item";
             this.addNewItemToolStripMenuItem.Click += new System.EventHandler(this.addNewItemToolStripMenuItem_Click);
             // 
             // removeItemToolStripMenuItem
             // 
             this.removeItemToolStripMenuItem.Name = "removeItemToolStripMenuItem";
-            this.removeItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.removeItemToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.removeItemToolStripMenuItem.Text = "Remove Item";
             this.removeItemToolStripMenuItem.Click += new System.EventHandler(this.removeItemToolStripMenuItem_Click);
             // 
             // findItemToolStripMenuItem
             // 
             this.findItemToolStripMenuItem.Name = "findItemToolStripMenuItem";
-            this.findItemToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.findItemToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.findItemToolStripMenuItem.Text = "Find Item";
             this.findItemToolStripMenuItem.Click += new System.EventHandler(this.findItemToolStripMenuItem_Click);
             // 
             // viewAllItemsToolStripMenuItem
             // 
             this.viewAllItemsToolStripMenuItem.Name = "viewAllItemsToolStripMenuItem";
-            this.viewAllItemsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.viewAllItemsToolStripMenuItem.Text = "View All Items";
+            this.viewAllItemsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.viewAllItemsToolStripMenuItem.Text = "View Inventory Items";
             this.viewAllItemsToolStripMenuItem.Click += new System.EventHandler(this.viewAllItemsToolStripMenuItem_Click);
             // 
             // addItemsFromCSVToolStripMenuItem
             // 
             this.addItemsFromCSVToolStripMenuItem.Name = "addItemsFromCSVToolStripMenuItem";
-            this.addItemsFromCSVToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addItemsFromCSVToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.addItemsFromCSVToolStripMenuItem.Text = "View Sold Items";
             this.addItemsFromCSVToolStripMenuItem.Click += new System.EventHandler(this.addItemsFromCSVToolStripMenuItem_Click);
             // 
