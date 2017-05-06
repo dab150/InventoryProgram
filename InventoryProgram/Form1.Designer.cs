@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,14 +74,14 @@
             // openRegisterToolStripMenuItem
             // 
             this.openRegisterToolStripMenuItem.Name = "openRegisterToolStripMenuItem";
-            this.openRegisterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openRegisterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.openRegisterToolStripMenuItem.Text = "Open Register";
             this.openRegisterToolStripMenuItem.Click += new System.EventHandler(this.openRegisterToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -172,6 +173,7 @@
             this.ClientSize = new System.Drawing.Size(1063, 618);
             this.Controls.Add(this.panelAllInventory);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
             this.Text = "Inventory Management Program";
