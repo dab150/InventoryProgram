@@ -24,7 +24,7 @@ namespace InventoryProgram
             InitializeComponent();
 
             //setup the connection on initialization
-            const string filename = @"C:\Users\cironid12\Documents\Sourcetree\InventoryProgram\InventoryProgram\SQLLiteDatabase.db";
+            const string filename = "SQLLiteDatabase.db";//@"C:\Users\cironid12\Documents\Sourcetree\InventoryProgram\InventoryProgram\SQLLiteDatabase.db";
             m_dbConnection = new SQLiteConnection("Data Source=" + filename + "; Version=3;");
             m_dbConnection.Open();
 
